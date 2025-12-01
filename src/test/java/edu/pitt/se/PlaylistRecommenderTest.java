@@ -7,10 +7,9 @@ public class PlaylistRecommenderTest {
 
     @Test
     public void classifyEnergyTest() {
-        String high = PlaylistRecommender.classifyEnergy(150);
-        String medium = PlaylistRecommender.classifyEnergy(100);
-        String low = PlaylistRecommender.classifyEnergy(50);
-
+        String high = PlaylistRecommender.classifyEnergy(java.util.List.of(140, 150, 160));
+        String medium = PlaylistRecommender.classifyEnergy(java.util.List.of(90, 100, 110));
+        String low = PlaylistRecommender.classifyEnergy(java.util.List.of(40, 50, 60));
         assertTrue(high.equals("HIGH"));
         assertTrue(medium.equals("MEDIUM"));
         assertTrue(low.equals("LOW"));
