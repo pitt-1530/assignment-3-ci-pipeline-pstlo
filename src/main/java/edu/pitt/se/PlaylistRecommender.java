@@ -24,14 +24,14 @@ public class PlaylistRecommender {
 
     public static boolean isValidTrackTitle(String title) {
         if (title == null || title.length() == 0) {return false;}
+        if (title.length() > 30) {return false;}
+
         for (int i = 0; i < title.length(); i++){
-            
-            if (i > 30) {return false;}
 
             char letter = title.charAt(i);
             int ascii = (int) letter;
 
-            if ((ascii < 65 && ascii > 90) && (ascii != 32)) {return false;}
+            if (!((ascii >= 65 && ascii <= 90) || (ascii >= 97 && ascii <= 122) || ascii == 32)) {return false;}
         }
 
         return true;
