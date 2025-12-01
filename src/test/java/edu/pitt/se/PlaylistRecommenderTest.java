@@ -20,9 +20,13 @@ public class PlaylistRecommenderTest {
     public void isValidTrackTitleTest() {
         boolean valid = PlaylistRecommender.isValidTrackTitle("Valid Title");
         boolean invalid = PlaylistRecommender.isValidTrackTitle("Invalid@Title!");
+        boolean empty = PlaylistRecommender.isValidTrackTitle("");
+        boolean nullTitle = PlaylistRecommender.isValidTrackTitle(null);
 
         assertTrue(valid);
         assertFalse(invalid);
+        assertFalse(empty);
+        assertFalse(nullTitle);
     }
 
     @Test
