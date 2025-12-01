@@ -31,8 +31,7 @@ public class PlaylistRecommender {
             char letter = title.charAt(i);
             int ascii = (int) letter;
 
-            if ((ascii >= 65 && ascii <= 90) || (ascii == 32)) {return true;}
-            else {return false;}
+            if ((ascii < 65 && ascii > 90) && (ascii != 32)) {return false;}
         }
 
         return true;
